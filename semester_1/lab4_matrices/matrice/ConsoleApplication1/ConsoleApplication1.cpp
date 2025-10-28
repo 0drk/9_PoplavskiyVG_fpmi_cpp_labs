@@ -242,7 +242,7 @@ void random_nums(int& cols, int& rows, int& a, int& b)
 int main() {
     srand(time(NULL));
     setlocale(LC_ALL, "RU");
-
+ 
     int rows, cols;
     
     
