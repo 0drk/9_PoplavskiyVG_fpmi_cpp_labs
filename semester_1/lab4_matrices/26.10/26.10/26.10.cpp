@@ -281,6 +281,11 @@ int sort_choice(int& z, int** matrix, int rows, int cols, int& q, int& n)
 		sel_sort(matrix, rows, cols, q);
 	}
 	print_changed_matrix(matrix, rows, cols);
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 	return z;
 }
 int main()
@@ -289,7 +294,10 @@ int main()
 	int p, a, b, z, q, n; int rows, cols;
 	matrix_size(rows, cols);
 	int** matrix = create_matrix(rows, cols);
+<<<<<<< Updated upstream
 	
+=======
+>>>>>>> Stashed changes
 	choice(p, matrix, rows, cols, a, b);
 	print_matrix(matrix, rows, cols);
 	choice_method(q);
