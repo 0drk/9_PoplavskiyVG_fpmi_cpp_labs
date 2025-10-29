@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <ctime>
 
 int matrix_size(int& rows, int& cols)
@@ -55,7 +55,7 @@ void counting_sort(int** matrix, int rows, int cols, int & q)
 				count[matrix[p][i]]++;
 
 			int index = 0;
-			for (int i = max; i >= 0; i--)  // ← меняем направление цикла
+			for (int i = max; i >= 0; i--) 
 				while (count[i]--)
 					matrix[p][index++] = i;
 
@@ -269,7 +269,7 @@ int sort_choice(int& z, int** matrix, int rows, int cols, int& q, int& n)
 	else if (z == 2)
 		merge_sort();
 	else if (z == 3)
-		insertion_Sort(matrix, rows, cols, q);
+		insertion_sort(matrix, rows, cols, q);
 	else if (z == 4)
 		counting_sort(matrix, rows, cols, q);
 	else if (z == 5)
@@ -278,27 +278,22 @@ int sort_choice(int& z, int** matrix, int rows, int cols, int& q, int& n)
 		exit(300);
 	}
 	else if (z == 6) {
-		
+		sel_sort(matrix, rows, cols, q);
 	}
-
-	
-			print_changed_matrix(matrix, rows, cols);
-
-
+	print_changed_matrix(matrix, rows, cols);
 	return z;
 }
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "Russian"); 
 	int p, a, b, z, q, n; int rows, cols;
 	matrix_size(rows, cols);
 	int** matrix = create_matrix(rows, cols);
-
+	
 	choice(p, matrix, rows, cols, a, b);
 	print_matrix(matrix, rows, cols);
 	choice_method(q);
 	sort_choice(z, matrix, rows, cols, q, n);
-
 }
 		
 
