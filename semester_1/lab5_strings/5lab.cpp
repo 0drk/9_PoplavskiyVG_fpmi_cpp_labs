@@ -126,7 +126,8 @@ void sortEnglish(std::string& s)
         }
     }
     std::cout << "Ваше отсортированное предложение: \n" << sorted_string;
-
+    delete[] count;
+    delete[] word;
 }
 void sortRussian(std::string& s)
 {
@@ -205,7 +206,8 @@ void sortRussian(std::string& s)
         }
     }
     std::cout << "Ваше отсортированное предложение: \n" << sorted_string;
-
+    delete[] count;
+    delete[] word;
 }
 std::string russian()
 {
