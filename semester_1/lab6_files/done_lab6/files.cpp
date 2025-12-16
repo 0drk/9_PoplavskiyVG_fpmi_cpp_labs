@@ -116,7 +116,7 @@ void find_max_lines(int* rows, int size)
 	std::cout << "Первые " << show << " строк(и) с " << max_words << " словами:\n";
 	std::cout << "---------------------------------------\n";
 
-	for (int i = 0; i < size && shown < to_show; i++) {
+	for (int i = 0; i < size && shown < show; i++) {
 		if (rows[i] == max_words) {
 			shown++;
 			std::cout << shown << ". " << all_lines[i] << "\n";
