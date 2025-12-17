@@ -1,4 +1,4 @@
-﻿
+
 
 #include <iostream>
 #include <fstream>
@@ -8,8 +8,8 @@ const int MaxLines = 1000;
 std::string all_lines[MaxLines];
 int actual_line_count = 0;
 
-int matrix();
-int* count_words(int& size);
+int lines_value();
+int* count_words();
 void find_max_lines(int* rows, int size);
 
 
@@ -17,10 +17,10 @@ void sort(int* rows, int& size);
 
 int main()
 {
-    setlocale(LC_ALL, "ru_RU.UTF-8");
-	int size = matrix();
-	int* rows = count_words(size);
-	
+	setlocale(LC_ALL, "ru_RU.UTF-8");
+	int size = lines_value();
+	int* rows = count_words();
+
 	find_max_lines(rows, size);
 
 	delete[] rows;
@@ -29,19 +29,19 @@ int main()
 int max_words(int* rows, int& size)
 {
 	int max = 0;
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < size; ++i) {
 		if (rows[i] > max) {
 			max = rows[i];
 		}
 	}
 	return max;
 }
-int* count_words(int& size)
+int* count_words()
 {
 	int counter = 0;
 	std::string line;
 	std::ifstream inputfile("input.txt");
-	size = matrix();
+	int size = lines_value();
 
 	int* rows = new int[size];
 	for (int i = 0; i < size; i++) {
@@ -50,7 +50,7 @@ int* count_words(int& size)
 
 
 	inputfile.clear();
-	
+
 
 	for (int i = 0; std::getline(inputfile, line); i++)
 	{
@@ -73,7 +73,7 @@ int* count_words(int& size)
 	inputfile.close();
 	return rows;
 }
-int matrix()
+int lines_value()
 {
 	setlocale(LC_ALL, "ru");
 
