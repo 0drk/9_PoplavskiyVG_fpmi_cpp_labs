@@ -39,9 +39,7 @@ public:
             return retval;
         }
 
-        bool operator==(const ForwardListIterator& other) const {
-            // your code goes here
-        }
+        bool operator==(const ForwardListIterator& other) const;
 
         bool operator!=(const ForwardListIterator& other) const {
             return !(*this == other);
@@ -61,22 +59,16 @@ public:
 
     // methods for "ranged-based for loop"
     // 1) non-const version
-    ForwardListIterator begin() {
-        // your code goes here
-    }
-    ForwardListIterator end() {
-        // your code goes here
-    }
+    ForwardListIterator begin();
+    
+    ForwardListIterator end();
+    
 
-    // 2) const version
-    // TODO: think about return type
-    // (is it exactly ForwardListIterator?)
-    ForwardListIterator begin() const {
-        // your code goes here
-    }
-    ForwardListIterator end() const {
-        // your code goes here
-    }
+    
+    ForwardListIterator begin() const;
+    
+    ForwardListIterator end() const;
+    
 
     // default constructor
     ForwardList();
@@ -99,7 +91,6 @@ public:
     // insert new element on the top of the list
     void PushFront(int32_t value);
 
-    // delete first element of the list
     void PopFront();
 
     // remove every occurence of an element in the list
@@ -125,5 +116,7 @@ public:
     size_t Size() const;
 
 private:
-    // your code goes here
+    Node* head_;
 };
+
+
